@@ -1,5 +1,9 @@
 <?php
-function numberDisplayConvert($myNumber,$minConvertLimit = 10000) {
+/* This is a PHP function to convert and display large numbers in shortened versions.
+I.e: convert thousands into K's and millions into M's. (E.g: "12.52K", "15.61M" )
+Also format unconverted thousands to be divided by comma (E.g: "9,512") */ 
+
+function formatLargeNumbers($myNumber,$minConvertLimit = 10000) {
 /*takes 2 parameters, 
 #1 is the number you want to convert. 
 #2 is the smallest number that you want to convert (default = 10000) */
