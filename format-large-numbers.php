@@ -3,10 +3,15 @@
 I.e: convert thousands into K's and millions into M's. (E.g: "12.52K", "15.61M" )
 Also format unconverted thousands to be divided by comma (E.g: "9,512") */ 
 
-function formatLargeNumbers($myNumber,$minConvertLimit = 10000) {
+function formatLargeNumbers($myNumber,$minConvertLimit = 10000, $displayConvertedNumber = true) {
 /*takes 2 parameters, 
 #1 is the number you want to convert. 
-#2 is the smallest number that you want to convert (default = 10000) */
+#2 is the smallest number that you want to convert (default = 10000) 
+#3 sets if the result should be echoed. True by default.
+*/
+
+global $numDisplayResult;
+//setting the result as global so it can be used outside of function
 
 if ($myNumber >= $minConvertLimit) {
 //if the number is larger than the $minConvertLimit
@@ -84,8 +89,14 @@ if ($myNumber < $minConvertLimit) {
 	$numDisplayResult = $myNumber; }
 }
 
-echo $numDisplayResult;
+if ($displayConvertedNumber == true) {
+	//echo result if display is set to true
+echo $numDisplayResult;}
+
+return $numDisplayResult;
+	// return result
 }
+
 
 
 ?>
